@@ -30,6 +30,10 @@
         },
         {
             "type": "path",
+            "url": "uspdev/api-keys"
+        },
+        {
+            "type": "path",
             "url": "uspdev/laravel-usp-theme"
         },
         {
