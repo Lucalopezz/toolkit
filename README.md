@@ -4,7 +4,7 @@ Sistema que permite testar algumas biblitecas do USPDev como o **replicado**, **
 
 ## Dependências
 
-* PHP 8.2 pois usa laravel 11
+* PHP 8.3 pois usa laravel 12
 
 ## Instalação e configuração
 
