@@ -49,10 +49,7 @@ class User extends Authenticatable
     public function abilities(string $role): array
     {
         return match ($role) {
-            'viewer' => ['notebooklm.users.search'],
             'user' => ['user.read'],
-            'manager' => ['user.read', 'user.update'],
-            'admin' => ['*'],
             default => [],
         };
     }

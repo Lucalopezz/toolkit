@@ -25,7 +25,9 @@ return [
     ],
 
     'query_parameter' => [
-        'enabled' => (bool) env('API_KEYS_QUERY_PARAMETER_ENABLED', false),
+        // Esta aplicação também disponibiliza a credencial na query string para
+        // integrações que não conseguem enviar o cabeçalho Authorization.
+        'enabled' => (bool) env('API_KEYS_QUERY_PARAMETER_ENABLED', true),
         'name' => env('API_KEYS_QUERY_PARAMETER_NAME', 'api_key'),
     ],
 
@@ -35,32 +37,14 @@ return [
             'auth',
         ],
         'ability' => 'manageApiKeys',
-        'page' => [
-            'enabled' => (bool) env('API_KEYS_MANAGEMENT_PAGE_ENABLED', true),
-            'layout' => env('API_KEYS_MANAGEMENT_LAYOUT', 'laravel-usp-theme::master'),
-        ],
-    ],
-
-    'theme' => [
-        'menu' => [
-            'enabled' => (bool) env('API_KEYS_USP_THEME_MENU_ENABLED', false),
-            'item' => [
-                'text' => '<i class="fas fa-key"></i> API Keys',
-                'url' => 'api-keys',
-            ],
-        ],
     ],
 
     'interface' => [
         'purposes' => [
             'integration' => 'Integração',
-            'ai' => 'IA',
         ],
         'roles' => [
-            'viewer' => 'Visualizador (NotebookLM)',
             'user' => 'Usuário',
-            'manager' => 'Gerente',
-            'admin' => 'Administrador',
         ],
     ],
 ];
