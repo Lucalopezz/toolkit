@@ -7,7 +7,7 @@
     },
     "servers": [
         {
-            "url": "/api",
+            "url": "https://dev12.sti.eesc.usp.br/~lucaslopes/toolkit/public/api",
             "description": "Instância atual da aplicação"
         }
     ],

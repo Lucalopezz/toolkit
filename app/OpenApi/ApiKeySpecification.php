@@ -15,7 +15,12 @@ use OpenApi\Attributes as OA;
     title: 'Toolkit API',
     description: 'API de integração do Toolkit autenticada por API Key.'
 )]
-#[OA\Server(url: '/api', description: 'Instância atual da aplicação')]
+/*
+ * A constante é preenchida pelo L5 Swagger a partir de APP_URL. Assim a URL
+ * mantém o subdiretório da aplicação quando ela não está publicada na raiz do
+ * domínio
+ */
+#[OA\Server(url: L5_SWAGGER_CONST_HOST, description: 'Instância atual da aplicação')]
 #[OA\Tag(
     name: 'API Keys',
     description: 'Operações autenticadas por uma API Key do Toolkit.'
@@ -57,6 +62,4 @@ use OpenApi\Attributes as OA;
         new OA\Property(property: 'message', type: 'string'),
     ]
 )]
-final class ApiKeySpecification
-{
-}
+final class ApiKeySpecification {}

@@ -32,3 +32,7 @@ php artisan l5-swagger:generate
 
 O Swagger UI permite autenticar pelo cabeçalho Bearer ou por `?api_key=`.
 O segundo método foi mantido para testes locais; não deve ser usado em produção.
+
+A URL-base da API no documento é derivada de `APP_URL` (ou pode ser definida
+explicitamente por `L5_SWAGGER_CONST_HOST`). Dessa forma, instalações em um
+subdiretório também geram chamadas corretas no Swagger UI.
